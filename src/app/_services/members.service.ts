@@ -26,7 +26,7 @@ export class MembersService {
   }
 
   getMember(username): Observable<Member> {
-    const member = this.members.find(x => x.userName === username);
+    const member = this.members.find(x => x.username === username);
     if (member !== undefined) return of(member)
     return this.http.get<Member>(this.baseUrl + 'users/' + username);
   }
